@@ -95,12 +95,17 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({ title, items, ctaText, ct
   }, []);
 
   const phoneContent = (
-    <div className="h-full flex items-center justify-center bg-gradient-to-br from-tucont-navy to-tucont-orange text-white p-6 rounded-2xl">
-      <div className="text-center">
-        <div className="text-4xl mb-4">{items[currentIndex]?.image}</div>
-        <h3 className="font-bold text-lg mb-2">{items[currentIndex]?.title}</h3>
-        <p className="text-sm opacity-90">{items[currentIndex]?.description}</p>
-      </div>
+    <div className="flex items-center justify-center rounded-2xl overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      >
+        <source src="/video/video-demo.mp4" type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
     </div>
   );
 

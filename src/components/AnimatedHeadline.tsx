@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Building2, FileText, FileStack, LineChart, Star } from "lucide-react";
 
 const headlines = [
   "Olá, sou a Tucont, Contabilidade Integrativa!",  
@@ -13,10 +14,26 @@ const headlines = [
 ];
 
 const cards = [
-  { title: "Abertura de Empresas", icon: "🏢" },
-  { title: "Emissão de Notas Fiscais", icon: "🧾" },
-  { title: "Envio de Tributos e notificação de vencimentos e acesso online aos seus documentos", icon: "📋" },
-  { title: "Jornada Empreendedora, Educação prática aplicável e Acompanhamento do seu Negócio", icon: "📊" }
+  { 
+    title: "Abertura de Empresas", 
+    description: "Processo completo de abertura com acompanhamento personalizado desde o primeiro passo até a operação regular da sua empresa.",
+    icon: <Building2 size={80} className="text-tucont-yellow" /> 
+  },
+  { 
+    title: "Emissão de Notas Fiscais", 
+    description: "Sistema integrado para emissão, gestão e armazenamento seguro de todas as suas notas fiscais em um único lugar.",
+    icon: <FileText size={80} className="text-tucont-yellow" /> 
+  },
+  { 
+    title: "Gestão Tributária", 
+    description: "Envio automático de tributos, notificação inteligente de vencimentos e acesso online centralizado a todos os seus documentos contábeis.", 
+    icon: <FileStack size={80} className="text-tucont-yellow" /> 
+  },
+  { 
+    title: "Jornada Empreendedora", 
+    description: "Programa completo de educação financeira e empresarial com acompanhamento mensal do crescimento do seu negócio.", 
+    icon: <LineChart size={80} className="text-tucont-yellow" /> 
+  }
 ];
 
 const AnimatedHeadline = () => {
@@ -42,15 +59,15 @@ const AnimatedHeadline = () => {
       const finalTimer = setTimeout(() => {
         setShowCards(false);
         setShowFinalMessage(true);
-      }, 5000);
+      }, 10000); // Aumentei para 10 segundos para visualização
       
       return () => clearTimeout(finalTimer);
     }
   }, [showCards]);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 w-full">
-      <div className="flex flex-col items-center justify-center w-full min-h-[50vh]">
+    <div className="max-w-8xl mx-auto px-4">
+      <div className="flex flex-col items-center justify-center w-full min-h-[70vh] py-12">
         <AnimatePresence mode="wait">
           {currentIndex < headlines.length && !showCards && !showFinalMessage && (
             <motion.h1
@@ -58,7 +75,7 @@ const AnimatedHeadline = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy  leading-tight text-center"
+              className="text-4xl md:text-8xl font-bold text-tucont-navy leading-tight text-center px-4"
             >
               {headlines[currentIndex]}
             </motion.h1>
@@ -71,7 +88,7 @@ const AnimatedHeadline = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8"
+              className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 px-2"
             >
               {cards.map((card, index) => (
                 <motion.div
@@ -80,10 +97,17 @@ const AnimatedHeadline = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-slate-800/90 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                  className="bg-slate-800/90 text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
                 >
-                  <div className="text-4xl mb-4">{card.icon}</div>
-                  <h3 className="font-semibold text-lg leading-tight">{card.title}</h3>
+                  <div className="mb-8 flex justify-center">
+                    {card.icon}
+                  </div>
+                  <h3 className="font-bold text-3xl mb-6 text-center leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-300 text-xl text-center flex-grow leading-relaxed">
+                    {card.description}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -95,19 +119,19 @@ const AnimatedHeadline = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="w-full flex flex-col items-center space-y-8"
+              className="w-full flex flex-col items-center space-y-12 py-12"
             >
-              <h2 className="text-3xl md:text-7xl font-bold text-tucont-navy text-center">
+              <h2 className="text-4xl md:text-7xl font-bold text-tucont-navy text-center px-4 leading-tight">
                 O jogo mudou, Contabilidade Ultrapassada, nunca mais!
               </h2>
               
-              <div className="w-full max-w-2xl">
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-2 flex items-center gap-3">
-                  <div className="flex-1 px-4 py-3">
+              <div className="w-full max-w-4xl px-4">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-3 flex items-center gap-4">
+                  <div className="flex-1 px-4 py-4">
                     <input
                       type="text"
                       placeholder="Pergunta aí: Abrir empresa, emitir nota fiscal...."
-                      className="w-full text-gray-600 placeholder-gray-400 bg-transparent border-none outline-none text-lg"
+                      className="w-full text-gray-600 placeholder-gray-400 bg-transparent border-none outline-none text-xl"
                       readOnly
                     />
                   </div>
@@ -115,11 +139,9 @@ const AnimatedHeadline = () => {
                     href="https://wa.me/5511999999999"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-green-400 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md"
+                    className="bg-green-400 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg text-lg"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
-                    </svg>
+                    <Star className="w-6 h-6" />
                     Resolver
                   </a>
                 </div>

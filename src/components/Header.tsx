@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
             <div className="w-10 h-10 bg-gradient-to-br from-tucont-navy to-tucont-orange rounded-lg flex items-center justify-center">
-              <Calculator className="w-6 h-6 text-white" />
+              <img src="/image/tucont-gif.gif" alt="Tucont" className="h-12" />
             </div>
             <span className="text-2xl font-bold text-tucont-navy">tucont</span>
           </Link>
