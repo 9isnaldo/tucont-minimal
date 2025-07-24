@@ -54,14 +54,14 @@ export default function About() {
     <>
       <Header />
       
-      <main className="pt-24">
+      <main>
         {/* Hero Section */}
         <section className="py-20 px-6 bg-tucont-orange text-center">
           <div className="max-w-4xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="min-h-[calc(40vh)] text-4xl md:text-6xl font-bold text-white mb-8"
+              className="min-h-[calc(55vh)] my-60 text-9xl md:text-6xl font-bold text-white mb-8"
             >
               Sua contabilidade online e pelo whatsapp!
             </motion.h1>

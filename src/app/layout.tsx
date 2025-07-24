@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const montserrat = Montserrat({ 
   subsets: ['latin'],
-  display: 'swap', // Adicionado para melhor performance
-  variable: '--font-inter'
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['300', '400', '500', '600', '700', '800', '900']
 })
 
 export const metadata: Metadata = {
@@ -19,13 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className={`font-sans ${inter.className} bg-white min-h-screen`}>
+    <html lang="pt-BR" className={`${montserrat.variable}`}>
+      <body className={`font-sans ${montserrat.className} bg-white min-h-screen`}>
         {children}
       </body>
     </html>

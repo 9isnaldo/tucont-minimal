@@ -49,7 +49,7 @@ const AnimatedHeadline = () => {
         } else {
           setShowCards(true);
         }
-      }, 3000);
+      }, 3000); //TEMPO DA ANIMAÇÃO - 3 SEGUINGOS
       return () => clearTimeout(timer);
     }
   }, [currentIndex]);
@@ -59,7 +59,7 @@ const AnimatedHeadline = () => {
       const finalTimer = setTimeout(() => {
         setShowCards(false);
         setShowFinalMessage(true);
-      }, 10000); // Aumentei para 10 segundos para visualização
+      }, 8000); // TEMPO DA ANIMAÇÃO - 8 SEGUINGOS
       
       return () => clearTimeout(finalTimer);
     }
@@ -75,7 +75,7 @@ const AnimatedHeadline = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy leading-tight text-center px-4"
+              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center "
             >
               {headlines[currentIndex]}
             </motion.h1>
@@ -102,7 +102,7 @@ const AnimatedHeadline = () => {
                   <div className="mb-8 flex justify-center">
                     {card.icon}
                   </div>
-                  <h3 className="font-bold text-3xl mb-6 text-center leading-tight">
+                  <h3 className="font-bold text-3xl mb-6 text-center">
                     {card.title}
                   </h3>
                   <p className="text-gray-300 text-xl text-center flex-grow leading-relaxed">
@@ -121,7 +121,7 @@ const AnimatedHeadline = () => {
               animate={{ opacity: 1, y: 0 }}
               className="w-full flex flex-col items-center space-y-12 py-12"
             >
-              <h2 className="text-4xl md:text-7xl font-bold text-tucont-navy text-center px-4 leading-tight">
+              <h2 className="text-4xl md:text-7xl max-w-6xl font-black text-tucont-navy text-center px-4">
                 O jogo mudou, Contabilidade Ultrapassada, nunca mais!
               </h2>
               

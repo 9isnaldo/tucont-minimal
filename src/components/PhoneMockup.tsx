@@ -17,10 +17,7 @@ const PhoneMockup: React.FC<PhoneMockupProps> = ({ content, className = "" }) =>
       className={`relative flex justify-center ${className}`}
     >
       <div className="relative bg-black rounded-[3rem] p-2 shadow-2xl w-80 max-w-sm">
-        <div className="bg-white rounded-[2.5rem] overflow-hidden">
-          {/* Notch */}
-          
-          
+        <div className="bg-white rounded-[2.5rem] overflow-hidden">  
           {/* Screen content */}
           <div className=" h-[650px] overflow-hidden">
             {content}
