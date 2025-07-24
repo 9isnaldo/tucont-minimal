@@ -8,8 +8,8 @@ const Header = () => {
       <div className="mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
-            <div className="w-10 h-10 bg-gradient-to-br from-tucont-navy to-tucont-orange rounded-lg flex items-center justify-center">
-              <img src="/image/tucont-gif.gif" alt="Tucont" className="h-12" />
+            <div className="w-20 h-20 bg-gradient-to-br from-tucont-navy to-tucont-orange rounded-lg flex items-center justify-center">
+              <img src="/image/tucont-gif.gif" alt="Tucont" className="w-50 h-50" />
             </div>
             <span className="text-2xl font-bold text-tucont-navy">tucont</span>
           </Link>
