@@ -1,4 +1,3 @@
-// src/app/conhecer/page.tsx
 "use client";
 
 import React from 'react';
@@ -9,6 +8,7 @@ import ServiceCards from '@/components/ServiceCards';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
 import ServiceSection from '@/components/sections/ServiceSection';
+import Banner from '@/components/sections/Banner';
 
 export default function About() {
   const onboardingItems = [
@@ -34,20 +34,10 @@ export default function About() {
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <section className="py-20 px-6 bg-tucont-orange text-center">
-          <div className="max-w-4xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="min-h-[calc(56vh)] my-60 text-4xl md:text-8xl max-w-6xl font-black text-white mb-7"
-            >
-              Sua contabilidade online e pelo whatsapp!
-            </motion.h1>
-          </div>
-        </section>
+        {/* Hero Section - Agora usando o componente Banner autônomo */}
+        <Banner />
 
-        {/* Services Section - Agora totalmente autocontido */}
+        {/* Services Section */}
         <ServiceSection />
 
         {/* About Section */}
