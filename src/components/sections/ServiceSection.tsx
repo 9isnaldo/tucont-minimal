@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, FileDigit, FileSearch, BarChart, FileText, Receipt, FileArchive, PieChart } from 'lucide-react';
+import { BookOpen, FileDigit, FileSearch, BarChart, FileText, Receipt, FileArchive, PieChart, TrendingUp , } from 'lucide-react';
 import PhoneMockup from '@/components/PhoneMockup';
 
 interface ServiceItem {
@@ -123,7 +123,7 @@ const ServiceSection = () => {
     <BookOpen key="book-open" className={`w-7 h-7 ${iconColors[0]}`} />,
     <FileDigit key="file-digit" className={`w-7 h-7 ${iconColors[1]}`} />,
     <FileSearch key="file-search" className={`w-7 h-7 ${iconColors[2]}`} />,
-    <BarChart key="bar-chart" className={`w-7 h-7 ${iconColors[3]}`} />,
+    <TrendingUp key="trending" className={`w-7 h-7 ${iconColors[3]}`} />
   ];
 
   const notaFiscalIcons = [
