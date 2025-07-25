@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Header from '../../components/Header';
 import ScrollSection from '@/components/ScrollSection';
 import ServiceCards from '@/components/ServiceCards';
-import FAQ from '@/components/FAQ';
+import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
 
 export default function About() {
@@ -70,7 +70,7 @@ export default function About() {
 
         {/* Services Section */}
         <ScrollSection 
-          title="Nossos Serviços"
+          title="Sem perda de tempo, nossos serviços automatizados"
           items={serviceItems}
         />
 
