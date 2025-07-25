@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ScrollIndicator } from "../ui/scroll-indicator";
 
 interface BannerProps {
   className?: string;
@@ -8,7 +9,7 @@ interface BannerProps {
 
 export default function Banner({ className = "" }: BannerProps) {
   return (
-    <section className={`py-20 px-6 bg-tucont-orange text-center ${className}`}>
+    <section className={`py-20 px-6 bg-tucont-orange text-center relative ${className}`}>
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[calc(84vh)]">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -26,6 +27,14 @@ export default function Banner({ className = "" }: BannerProps) {
           Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.
         </motion.h2>
       </div>
+      
+      <ScrollIndicator 
+        lineWidth={10}           // Largura das linhas
+        lineHeight={50}          // Altura das linhas
+        containerHeight={160}    // Altura do container
+        movementRange={10}       // Movimento vertical
+        lineCount={130}          // Quantidade de linhas
+      />
     </section>
   );
 }

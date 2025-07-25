@@ -27,6 +27,22 @@ const Header = () => {
             </span>
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-tucont-navy transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
           </Link>
+
+          <Link 
+            href="/conhecer" 
+            className="relative text-tucont-navy text-2xl font-medium group overflow-hidden"
+          >
+            <span className="relative inline-block">
+              <span className="block group-hover:translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]">
+                Jornada Empreendedora
+              </span>
+              <span className="absolute left-0 top-0 text-tucont-orange translate-y-[100%] group-hover:translate-y-0 block transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]">
+                Jornada Empreendedora
+              </span>
+            </span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-tucont-navy transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
+          </Link>
+
         </div>
 
         <div className="flex items-center gap-4">
