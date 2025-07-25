@@ -8,17 +8,16 @@ const Header = () => {
       <div className="mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-tucont-navy to-tucont-orange rounded-lg flex items-center justify-center">
-              <img src="/image/tucont-gif.gif" alt="Tucont" className="w-50 h-50" />
+            <div className="w-20 h-20 flex items-center justify-center">
+              <img src="/image/logo-tucont.svg" alt="Tucont" className="w-40 h-40" />
             </div>
-            <span className="text-2xl font-bold text-tucont-navy">tucont</span>
           </Link>
           
           <Link 
             href="/conhecer" 
-            className="text-tucont-navy hover:text-tucont-orange transition-colors duration-300 text-lg font-semibold"
+            className="text-tucont-navy hover:text-tucont-orange transition-colors duration-300 text-2xl font-medium"
           >
-            Conhecer a Tucont Integrativa
+            Conhecer a Tucont
           </Link>
         </div>
 

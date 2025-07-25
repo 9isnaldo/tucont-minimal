@@ -40,7 +40,7 @@ export default function About() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="min-h-[calc(55vh)] my-60 text-9xl md:text-6xl font-bold text-white mb-8"
+              className="min-h-[calc(56vh)] my-60 text-4xl md:text-8xl max-w-6xl font-black text-white mb-7"
             >
               Sua contabilidade online e pelo whatsapp!
             </motion.h1>
