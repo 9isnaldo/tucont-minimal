@@ -4,7 +4,7 @@ import { Calculator } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 backdrop-blur-sm bg-opacity-90">
       <div className="mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
@@ -15,9 +15,17 @@ const Header = () => {
           
           <Link 
             href="/conhecer" 
-            className="text-tucont-navy hover:text-tucont-orange transition-colors duration-300 text-2xl font-medium"
+            className="relative text-tucont-navy text-2xl font-medium group overflow-hidden"
           >
-            Conhecer a Tucont
+            <span className="relative inline-block">
+              <span className="block group-hover:translate-y-[-100%] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]">
+                Conhecer a Tucont
+              </span>
+              <span className="absolute left-0 top-0 text-tucont-orange translate-y-[100%] group-hover:translate-y-0 block transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]">
+                Conhecer a Tucont
+              </span>
+            </span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-tucont-navy transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
           </Link>
         </div>
 

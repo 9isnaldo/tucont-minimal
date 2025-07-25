@@ -11,8 +11,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'TuCont - Contabilidade Integrativa',
-  description: 'TuCont - Contabilidade Integrativa Online com Atendimento Humanizado via WhatsApp',
+  title: 'Tucont - Contabilidade Integrativa',
+  description: 'Tucont - Contabilidade Integrativa Online com Atendimento Humanizado via WhatsApp',
 };
 
 export default function RootLayout({

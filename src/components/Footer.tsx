@@ -10,10 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-tucont-orange to-tucont-orange-light rounded-lg flex items-center justify-center">
-                <Calculator className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold">TuCont</span>
+              <img src="/image/logo-tucont.png" alt="Tucont" className="h-12" />
             </div>
             <p className="text-gray-300 leading-relaxed">
               Contabilidade Integrativa com atendimento humanizado via WhatsApp

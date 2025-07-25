@@ -49,7 +49,7 @@ const AnimatedHeadline = () => {
         } else {
           setShowCards(true);
         }
-      }, 3000); //TEMPO DA ANIMAÇÃO - 3 SEGUINGOS
+      }, 3500); //TEMPO DA ANIMAÇÃO - 3 SEGUINGOS
       return () => clearTimeout(timer);
     }
   }, [currentIndex]);
@@ -97,7 +97,7 @@ const AnimatedHeadline = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-slate-800/90 text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
+                  className="bg-tucont-navy text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
                 >
                   <div className="mb-8 flex justify-center">
                     {card.icon}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import AnimatedHeadline from '@/components/AnimatedHeadline';
+import AnimatedHeadline from '@/app/home/page';
 import Footer from '@/components/Footer';
 
 export default function Home() {
