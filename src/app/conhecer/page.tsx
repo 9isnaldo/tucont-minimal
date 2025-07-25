@@ -1,3 +1,4 @@
+// src/app/conhecer/page.tsx
 "use client";
 
 import React from 'react';
@@ -7,31 +8,9 @@ import ScrollSection from '@/components/ScrollSection';
 import ServiceCards from '@/components/ServiceCards';
 import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/Footer';
+import ServiceSection from '@/components/sections/ServiceSection';
 
 export default function About() {
-  const serviceItems = [
-    {
-      title: "Abertura de Empresa",
-      description: "Processo 100% digital e automatizado. Em poucos cliques, sua empresa está pronta para funcionar. Nosso sistema cuida de toda a burocracia enquanto você foca no que realmente importa.",
-      image: "🏢"
-    },
-    {
-      title: "Emissão de Notas Fiscais",
-      description: "Emita suas notas fiscais de forma rápida e segura. Sistema integrado que simplifica todo o processo, com validação automática e envio direto aos clientes.",
-      image: "🧾"
-    },
-    {
-      title: "Tributos e Documentos",
-      description: "Nunca mais perca prazos! Enviamos automaticamente seus tributos e notificamos sobre vencimentos. Todos os seus documentos organizados e acessíveis online 24/7.",
-      image: "📋"
-    },
-    {
-      title: "Dados e Insights",
-      description: "Transformamos seus dados em decisões estratégicas. Relatórios inteligentes, análises de performance e insights que impulsionam o crescimento do seu negócio.",
-      image: "📊"
-    }
-  ];
-
   const onboardingItems = [
     {
       title: "Chama no whats ou cadastra por este link",
@@ -68,11 +47,8 @@ export default function About() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <ScrollSection 
-          title="Sem perda de tempo, nossos serviços automatizados"
-          items={serviceItems}
-        />
+        {/* Services Section - Agora totalmente autocontido */}
+        <ServiceSection />
 
         {/* About Section */}
         <section className="py-20 px-6 bg-gray-50">
@@ -101,7 +77,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* Onboarding Section */}
+        {/* Onboarding Section - Mantendo o scroll original */}
         <ScrollSection 
           title="Crie sua conta, é grátis e leva menos de 3 minutos."
           items={onboardingItems}
