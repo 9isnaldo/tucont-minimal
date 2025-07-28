@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Star, Apple, Rocket,   Target, Landmark, BookOpen, Users, LineChart, Handshake } from 'lucide-react';
+import { Check, Star, Apple, Rocket,   Target, Landmark, BookOpen, Users, LineChart, Handshake, ChevronDown } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 const Journey = () => {
   const journeyFaqs = [
@@ -28,6 +30,8 @@ const Journey = () => {
       answer: "Desenvolvemos estratégias de lançamento, validação de mercado, posicionamento de produto e planos de crescimento personalizados para seu negócio."
     }
   ];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-white">
@@ -214,7 +218,7 @@ const Journey = () => {
               transition={{ duration: 1 }}
               className="mb-8"
             >
-              <p className="text-3xl font-bold text-tucont-navy mb-20">
+              <p className="text-3xl md:text-5xl font-bold text-tucont-navy mb-20 leading-tight">
                 A maior plataforma do mundo de jornada empreendedora
               </p>
             </motion.div>
@@ -272,18 +276,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Do conceito inicial até a operação completa, oferecemos suporte integral para tirar sua ideia do papel e transformá-la em um negócio próspero.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
 
@@ -313,18 +305,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Desenvolvemos seu MVP, testamos no mercado e criamos estratégias eficazes de Go-to-Market para garantir o sucesso do seu lançamento.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             </div>
@@ -366,18 +346,6 @@ const Journey = () => {
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Nossa plataforma ERP integrada permite que você gerencie vendas, emita notas fiscais e controle todo o financeiro em um só lugar, com relatórios em tempo real.
                 </p>
-                
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                  <a
-                    href="https://wa.me/5511999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                  >
-                    Assinar JE
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -419,18 +387,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Acesso a materiais educativos, frameworks testados e conhecimento prático que você pode aplicar imediatamente para acelerar o crescimento do seu negócio.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
 
@@ -460,18 +416,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Sessões individuais com especialistas em cada área do seu negócio, oferecendo orientação personalizada e estratégias específicas para seus desafios.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             </div>
@@ -514,18 +458,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Organizamos toda documentação, criamos pitch decks profissionais e estruturamos contratos de vesting para apresentar seu negócio aos investidores com confiança.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
 
@@ -555,18 +487,6 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Suporte completo em rodadas de investimento, processos de M&A e estruturação de diluição, garantindo as melhores condições para seu negócio.
                   </p>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
-                    <a
-                      href="https://wa.me/5511999999999"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
-                    >
-                      Assinar JE
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             </div>
@@ -575,30 +495,55 @@ const Journey = () => {
 
         {/* FAQ Jornada Integrativa */}
         <section className="py-20 px-6 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16"
+              className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-16"
             >
               Perguntas e Respostas sobre a Jornada Integrativa
             </motion.h2>
 
-            <div className="space-y-4">
+            <div className="space-y-8 max-w-4xl mx-auto">
               {journeyFaqs.map((faq, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-card rounded-3xl p-8 shadow-2xl border border-border"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
                 >
-                  <h3 className="font-semibold text-lg text-gray-900 mb-4">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <button
+                    className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-300"
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  >
+                    <h3 className="font-semibold text-lg text-tucont-navy pr-4">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={`w-6 h-6 text-tucont-orange transition-transform duration-300 flex-shrink-0 ${
+                        openIndex === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-8 pb-6">
+                          <p className="text-gray-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
