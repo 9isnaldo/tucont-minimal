@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import Plataforma from '../../components/sections/Plataforma';
 
 const Journey = () => {
   const journeyFaqs = [
@@ -210,35 +211,7 @@ const Journey = () => {
         </section>
 
         {/* Seção da Plataforma */}
-        <section className="py-20 px-6 text-center bg-white">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, rotateX: 90 }}
-              whileInView={{ opacity: 1, rotateX: 0 }}
-              transition={{ duration: 1 }}
-              className="mb-8"
-            >
-              <p className="text-3xl md:text-5xl font-bold text-tucont-navy mb-20 leading-tight">
-                A maior plataforma do mundo de jornada empreendedora
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, rotateX: 90 }}
-              whileInView={{ opacity: 1, rotateX: 0 }}
-              transition={{ delay: 0.1, duration: 1 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="bg-gradient-to-r from-tucont-orange to-tucont-orange-light p-8 rounded-3xl shadow-2xl transform perspective-1000 rotate-x-12">
-                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                  <div className="text-6xl mb-4">💻</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Plataforma Integrativa</h3>
-                  <p className="text-white">Sua jornada empreendedora em uma só plataforma</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <Plataforma />
 
         {/* Seção 1: Tirar Ideia do Papel */}
         <section className="py-20 px-6 bg-gray-50">
@@ -495,7 +468,7 @@ const Journey = () => {
 
         {/* FAQ Jornada Integrativa */}
         <section className="py-20 px-6 bg-gray-50">
-          <div className="mx-auto">
+          <div className="max-w-4xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -504,7 +477,7 @@ const Journey = () => {
               Perguntas e Respostas sobre a Jornada Integrativa
             </motion.h2>
 
-            <div className="space-y-8 max-w-4xl mx-auto">
+            <div className="space-y-8">
               {journeyFaqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -521,7 +494,7 @@ const Journey = () => {
                       {faq.question}
                     </h3>
                     <ChevronDown
-                      className={`w-6 h-6 text-tucont-orange transition-transform duration-300 flex-shrink-0 ${
+                      className={`w-6 h-6 text-orange-500 transition-transform duration-300 flex-shrink-0 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -547,29 +520,27 @@ const Journey = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* CTA Final */}
-        <section className="py-20 px-6 bg-white">
-          <div className="max-w-4xl mx-auto text-center">
+            {/* CTA Final - Agora ajustado para ficar igual ao exemplo */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-blue-900 to-orange-500 p-8 rounded-3xl text-white shadow-2xl"
+              className="text-center mt-16"
             >
-              <h3 className="text-2xl font-bold mb-4">Vem voar com a Tucont!</h3>
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-110 transition-all duration-300 shadow-lg inline-block"
-              >
-                Assinar JE
-              </a>
+              <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-8 rounded-3xl text-white shadow-2xl max-w-2xl mx-auto">
+                <h3 className="text-lg mb-4 font-medium">Vem voar com a Tucont!</h3>
+                <a
+                  href="https://wa.me/5531975740510"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-110 transition-all duration-300 shadow-lg inline-block"
+                >
+                  Assinar JE
+                </a>
+              </div>
             </motion.div>
           </div>
-        </section>
+</section>
       </main>
 
       <Footer />
