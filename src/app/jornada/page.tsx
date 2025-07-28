@@ -234,7 +234,7 @@ const Journey = () => {
                   <div className='flex justify-center'>
                     <Rocket className="w-16 h-16 mb-6 text-orange-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                     Da ideia a operação, do plano a execução, nós vamos com você!
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -243,7 +243,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Transforme sua ideia em realidade
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -262,7 +262,7 @@ const Journey = () => {
                     <div className='flex justify-center'>
                       <Target className="w-16 h-16 mb-6 text-red-700" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                       Do MVP ao Go-to-Market
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -272,7 +272,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center lg:col-start-1">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Validação e Lançamento
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -290,7 +290,7 @@ const Journey = () => {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-20"
+              className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-20"
             >
               Gestão e Acompanhamento
             </motion.h2>
@@ -304,7 +304,7 @@ const Journey = () => {
                 <div className='flex justify-center'>
                   <Landmark className="w-16 h-16 mb-6 text-blue-700" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                   Venda, emita notas e controle o financeiro em nosso ERP
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -313,7 +313,7 @@ const Journey = () => {
               </div>
               
               <div className="space-y-6 text-center">
-                <h3 className="text-3xl font-bold text-gray-900">
+                <h3 className="text-3xl font-bold text-tucont-orange">
                   Controle Total do seu Negócio
                 </h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
@@ -330,7 +330,7 @@ const Journey = () => {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-20"
+              className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-20"
             >
               Tracionar e Evoluir
             </motion.h2>
@@ -345,7 +345,7 @@ const Journey = () => {
                   <div className='flex justify-center'>
                     <BookOpen className="w-16 h-16 mb-6 text-violet-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                     Educação, materiais e frameworks aplicáveis imediatamente
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -354,7 +354,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Conhecimento que Transforma
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -373,7 +373,7 @@ const Journey = () => {
                     <div className='flex justify-center'>
                       <Users className="w-16 h-16 mb-6 text-blue-900" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                       Consultoria e Mentoria 1:1 e especializada
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -383,7 +383,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center lg:col-start-1">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Mentoria Especializada
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -401,7 +401,7 @@ const Journey = () => {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-20"
+              className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-20"
             >
               Voar mais alto - Investidores
             </motion.h2>
@@ -416,7 +416,7 @@ const Journey = () => {
                   <div className='flex justify-center'>
                     <LineChart className="w-16 h-16 mb-6 text-orange-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                     Preparar para investidores
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -425,7 +425,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Pronto para Investimento
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -444,7 +444,7 @@ const Journey = () => {
                     <div className='flex justify-center'>
                       <Handshake className="w-16 h-16 mb-6 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-bold text-tucont-navy mb-4">
                       Negociações com o Mercado
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -454,7 +454,7 @@ const Journey = () => {
                 </div>
                 
                 <div className="space-y-6 text-center lg:col-start-1">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-tucont-orange">
                     Negociações Estratégicas
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">

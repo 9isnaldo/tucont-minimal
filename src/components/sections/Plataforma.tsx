@@ -1,15 +1,40 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ZoomIn, X } from 'lucide-react';
+import { ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 
 const Plataforma = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    '/image/tucont-sistema-1.png',
+    '/image/tucont-sistema-2.png',
+    '/image/tucont-sistema-3.png'
+  ];
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+    // Resetar para a primeira imagem quando fechar o modal
+    if (!isExpanded) {
+      setCurrentImageIndex(0);
+    }
+  };
+
+  const goToNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToPrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
   };
 
   return (
@@ -39,7 +64,7 @@ const Plataforma = () => {
               onClick={toggleExpand}
             >
               <Image
-                src="/image/tucont-sistema.png"
+                src="/image/tucont-sistema-1.png"
                 alt="Plataforma Tucont"
                 fill
                 className="object-cover"
@@ -56,13 +81,16 @@ const Plataforma = () => {
           </div>
         </motion.div>
 
-        {/* Modal para imagem expandida com botão na diagonal fora */}
+        {/* Modal para imagem expandida com navegação */}
         {isExpanded && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4">
-            {/* Container do botão posicionado absolutamente na diagonal */}
-            <div className="relative w-full max-w-6xl">
+          <div 
+            className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4"
+            onClick={toggleExpand}
+          >
+            <div className="relative w-full max-w-6xl flex items-center">
+              {/* Botão de fechar */}
               <button 
-                className="absolute -top-8 -right-8 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
+                className="absolute -top-12 -right-4 md:-right-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleExpand();
@@ -71,16 +99,48 @@ const Plataforma = () => {
                 <X className="w-8 h-8 text-gray-800" />
               </button>
               
-              <div className="aspect-video relative">
+              {/* Botão anterior */}
+              <button 
+                className="absolute -left-4 md:-left-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10 mr-4"
+                onClick={goToPrevImage}
+              >
+                <ChevronLeft className="w-8 h-8 text-gray-800" />
+              </button>
+              
+              {/* Container da imagem */}
+              <div className="w-full aspect-video relative mx-8">
                 <Image
-                  src="/image/tucont-sistema.png"
-                  alt="Plataforma Tucont - Visão expandida"
-                  width={1200}
-                  height={800}
-                  className="object-contain max-h-[85vh] mx-auto"
-                  onClick={toggleExpand}
+                  src={images[currentImageIndex]}
+                  alt={`Plataforma Tucont - Visão expandida ${currentImageIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
                 />
               </div>
+              
+              {/* Botão próximo */}
+              <button 
+                className="absolute -right-4 md:-right-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10 ml-4"
+                onClick={goToNextImage}
+              >
+                <ChevronRight className="w-8 h-8 text-gray-800" />
+              </button>
+            </div>
+            
+            {/* Indicadores de imagem */}
+            <div className="flex mt-6 space-x-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentImageIndex(index);
+                  }}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentImageIndex ? 'bg-white' : 'bg-gray-500'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         )}
