@@ -9,7 +9,6 @@ import PhoneMockup from '@/components/PhoneMockup';
 interface ServiceItem {
   title: string;
   description: string;
-  image: string;
 }
 
 const ServiceSection = () => {
@@ -23,22 +22,18 @@ const ServiceSection = () => {
     {
       title: "Abertura de Empresa",
       description: "Processo 100% digital e automatizado. Em poucos cliques, sua empresa está pronta para funcionar. Nosso sistema cuida de toda a burocracia enquanto você foca no que realmente importa.",
-      image: "🏢"
     },
     {
       title: "Emissão de Notas Fiscais",
       description: "Emita suas notas fiscais de forma rápida e segura. Sistema integrado que simplifica todo o processo, com validação automática e envio direto aos clientes.",
-      image: "🧾"
     },
     {
       title: "Tributos e Documentos",
       description: "Nunca mais perca prazos! Enviamos automaticamente seus tributos e notificamos sobre vencimentos. Todos os seus documentos organizados e acessíveis online 24/7.",
-      image: "📋"
     },
     {
       title: "Dados e Insights",
       description: "Transformamos seus dados em decisões estratégicas. Relatórios inteligentes, análises de performance e insights que impulsionam o crescimento do seu negócio.",
-      image: "📊"
     }
   ];
 
@@ -46,22 +41,18 @@ const ServiceSection = () => {
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "🧾"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "📑"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "📋"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "📊"
     }
   ];
 
@@ -69,22 +60,18 @@ const ServiceSection = () => {
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "💰"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "⏱️"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "💰"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "⏱️"
     }
   ];
 
@@ -92,22 +79,18 @@ const ServiceSection = () => {
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "📈"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "📊"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "💰"
     },
     {
       title: "Lorem Ipsum",
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-      image: "⏱️"
     }
   ];
 
