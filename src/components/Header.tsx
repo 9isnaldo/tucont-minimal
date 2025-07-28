@@ -30,7 +30,7 @@ const Header = () => {
           </Link>
 
           <Link 
-            href="/conhecer" 
+            href="/jornada" 
             className="relative text-tucont-navy text-2xl font-medium group overflow-hidden"
           >
             <span className="relative inline-block">
