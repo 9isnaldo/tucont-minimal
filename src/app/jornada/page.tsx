@@ -126,7 +126,7 @@ const Journey = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100"
+                className="bg-card rounded-3xl p-8 shadow-2xl border border-border"
               >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -226,7 +226,7 @@ const Journey = () => {
               className="max-w-4xl mx-auto"
             >
               <div className="bg-gradient-to-br from-blue-900 to-orange-500 p-8 rounded-3xl shadow-2xl transform perspective-1000 rotate-x-12">
-                <div className="bg-white rounded-2xl p-8 text-center">
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="text-6xl mb-4">💻</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Plataforma Integrativa</h3>
                   <p className="text-gray-600">Sua jornada empreendedora em uma só plataforma</p>
@@ -253,7 +253,7 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="text-5xl mb-6">🚀</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Da ideia a operação, do plano a execução, nós vamos com você!
@@ -270,7 +270,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Do conceito inicial até a operação completa, oferecemos suporte integral para tirar sua ideia do papel e transformá-la em um negócio próspero.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -290,7 +290,7 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                     <div className="text-5xl mb-6">🎯</div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Do MVP ao Go-to-Market
@@ -308,7 +308,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Desenvolvemos seu MVP, testamos no mercado e criamos estratégias eficazes de Go-to-Market para garantir o sucesso do seu lançamento.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -341,7 +341,7 @@ const Journey = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
             >
-              <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+              <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                 <div className="text-5xl mb-6">💰</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Venda, emita notas e controle o financeiro em nosso ERP
@@ -358,7 +358,7 @@ const Journey = () => {
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Nossa plataforma ERP integrada permite que você gerencie vendas, emita notas fiscais e controle todo o financeiro em um só lugar, com relatórios em tempo real.
                 </p>
-                <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                   <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                   <a
                     href="https://wa.me/5511999999999"
@@ -391,7 +391,7 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="text-5xl mb-6">📚</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Educação, materiais e frameworks aplicáveis imediatamente
@@ -408,7 +408,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Acesso a materiais educativos, frameworks testados e conhecimento prático que você pode aplicar imediatamente para acelerar o crescimento do seu negócio.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -428,7 +428,7 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                     <div className="text-5xl mb-6">👥</div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Consultoria e Mentoria 1:1 e especializada
@@ -446,7 +446,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Sessões individuais com especialistas em cada área do seu negócio, oferecendo orientação personalizada e estratégias específicas para seus desafios.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -480,7 +480,7 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="text-5xl mb-6">📈</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Preparar para investidores
@@ -497,7 +497,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Organizamos toda documentação, criamos pitch decks profissionais e estruturamos contratos de vesting para apresentar seu negócio aos investidores com confiança.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -517,7 +517,7 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                     <div className="text-5xl mb-6">🤝</div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Negociações com o Mercado
@@ -535,7 +535,7 @@ const Journey = () => {
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Suporte completo em rodadas de investimento, processos de M&A e estruturação de diluição, garantindo as melhores condições para seu negócio.
                   </p>
-                  <div className="bg-orange-50 border border-orange-100 text-gray-900 p-6 rounded-2xl">
+                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
                     <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
@@ -570,7 +570,7 @@ const Journey = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
+                  className="bg-card rounded-3xl p-8 shadow-2xl border border-border"
                 >
                   <h3 className="font-semibold text-lg text-gray-900 mb-4">
                     {faq.question}

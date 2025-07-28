@@ -36,12 +36,12 @@ const FAQ = () => {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-3xl md:text-4xl font-bold text-tucont-navy text-center mb-16"
+          className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-16"
         >
           Perguntas e Respostas
         </motion.h2>
 
-        <div className="space-y-4">
+        <div className="space-y-8">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -90,10 +90,10 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-tucont-navy to-tucont-orange p-8 rounded-3xl text-white shadow-2xl">
-            <h3 className="text-2xl font-bold mb-4">Vem voar com a Tucont!</h3>
+          <div className="bg-gradient-to-r from-tucont-orange-light to-tucont-orange p-8 rounded-3xl text-white shadow-2xl max-w-2xl mx-auto">
+            <h3 className="text-lg mb-4 font-medium">Vem voar com a Tucont!</h3>
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5531975740510"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-tucont-navy px-8 py-4 rounded-full font-bold hover:scale-110 transition-all duration-300 shadow-lg inline-block"

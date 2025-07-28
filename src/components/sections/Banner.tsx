@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ScrollIndicator } from "../ui/scroll-indicator";
 
 interface BannerProps {
   className?: string;
@@ -27,14 +26,14 @@ export default function Banner({ className = "" }: BannerProps) {
           Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.
         </motion.h2>
       </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-tucont-navy rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
       
-      <ScrollIndicator 
-        lineWidth={10}           // Largura das linhas
-        lineHeight={50}          // Altura das linhas
-        containerHeight={160}    // Altura do container
-        movementRange={10}       // Movimento vertical
-        lineCount={130}          // Quantidade de linhas
-      />
     </section>
   );
 }
