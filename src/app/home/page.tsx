@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, FileText, FileStack, LineChart, Star } from "lucide-react";
+import { Building2, FileText, FileStack, LineChart, Star, ArrowRight } from "lucide-react";
 
 const headlines = [
   "Olá, sou a Tucont, Contabilidade Integrativa!",  
@@ -59,7 +59,7 @@ const AnimatedHeadline = () => {
       const finalTimer = setTimeout(() => {
         setShowCards(false);
         setShowFinalMessage(true);
-      }, 8000); // TEMPO DA ANIMAÇÃO - 8 SEGUINGOS
+      }, 10000); // TEMPO DA ANIMAÇÃO - 8 SEGUINGOS
       
       return () => clearTimeout(finalTimer);
     }
@@ -121,12 +121,12 @@ const AnimatedHeadline = () => {
               animate={{ opacity: 1, y: 0 }}
               className="w-full flex flex-col items-center space-y-12 py-12"
             >
-              <h2 className="text-4xl md:text-7xl max-w-6xl font-black text-tucont-navy text-center px-4">
+              <h2 className="text-4xl md:text-8xl font-black text-tucont-navy text-center px-4">
                 O jogo mudou, Contabilidade Ultrapassada, nunca mais!
               </h2>
               
               <div className="w-full max-w-4xl px-4">
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-3 flex items-center gap-4">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-16 flex items-center gap-4">
                   <div className="flex-1 px-4 py-4">
                     <input
                       type="text"
@@ -139,10 +139,10 @@ const AnimatedHeadline = () => {
                     href="https://wa.me/5511999999999"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-green-400 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg text-lg"
+                    className="bg-orange-400 hover:bg-tucont-orange text-white rounded-full px-8 py-4 font-medium transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg text-lg"
                   >
-                    <Star className="w-6 h-6" />
-                    Resolver
+                    <ArrowRight className="w-8 h-8" />
+
                   </a>
                 </div>
               </div>
