@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Star, Apple } from 'lucide-react';
+import { Check, Star, Apple, Rocket,   Target, Landmark, BookOpen, Users, LineChart, Handshake } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -45,7 +45,7 @@ const Journey = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="space-y-2"
                 >
-                  <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="bg-orange-500 ite text-white px-4 py-2 rounded-full text-sm font-medium">
                     Nossa Plataforma!
                   </span>
                 </motion.div>
@@ -54,7 +54,7 @@ const Journey = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-4xl md:text-5xl font-bold text-tucont-navy leading-tight"
+                  className="text-3xl md:text-5xl font-bold text-tucont-navy mb-20 leading-tight"
                 >
                   Copiloto da sua Jornada Empreendedora? Sim, nossa{' '}
                   <span className="text-orange-500">cereja do bolo!</span>
@@ -64,7 +64,7 @@ const Journey = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-xl text-gray-600 mb-8"
+                  className="text-xl font-medium text-gray-700 mb-8"
                 >
                   Planos, estratégia e operação
                 </motion.p>
@@ -80,7 +80,7 @@ const Journey = () => {
                     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-gray-600 leading-relaxed text-lg">
                       Começar não é fácil? Te ajudamos da criação até a validação
                     </p>
                   </div>
@@ -89,7 +89,7 @@ const Journey = () => {
                     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-gray-600 leading-relaxed text-lg">
                       Aprenda, pratique e evolua: Aulas e materiais testados, conhecimento prático que acelera seu negócio
                     </p>
                   </div>
@@ -98,7 +98,7 @@ const Journey = () => {
                     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-gray-600 leading-relaxed text-lg">
                       Cabe no seu bolso: Não cobramos taxa de adesão e você para quando quiser
                     </p>
                   </div>
@@ -130,7 +130,7 @@ const Journey = () => {
               >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    Comece na TuCont <span className="text-orange-500">gratuitamente</span>
+                    Comece na <span className="text-orange-500">tucont</span> gratuitamente
                   </h3>
                   <p className="text-gray-600">Cadastre-se com uma das contas</p>
                 </div>
@@ -214,22 +214,22 @@ const Journey = () => {
               transition={{ duration: 1 }}
               className="mb-8"
             >
-              <p className="text-orange-500 font-semibold text-lg mb-4 uppercase tracking-wider">
-                A MAIOR PLATAFORMA DO MUNDO DE JORNADA EMPREENDEDORA
+              <p className="text-3xl font-bold text-tucont-navy mb-20">
+                A maior plataforma do mundo de jornada empreendedora
               </p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, rotateX: 90 }}
               whileInView={{ opacity: 1, rotateX: 0 }}
-              transition={{ delay: 0.3, duration: 1 }}
+              transition={{ delay: 0.1, duration: 1 }}
               className="max-w-4xl mx-auto"
             >
-              <div className="bg-gradient-to-br from-blue-900 to-orange-500 p-8 rounded-3xl shadow-2xl transform perspective-1000 rotate-x-12">
+              <div className="bg-gradient-to-r from-tucont-orange to-tucont-orange-light p-8 rounded-3xl shadow-2xl transform perspective-1000 rotate-x-12">
                 <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="text-6xl mb-4">💻</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Plataforma Integrativa</h3>
-                  <p className="text-gray-600">Sua jornada empreendedora em uma só plataforma</p>
+                  <p className="text-white">Sua jornada empreendedora em uma só plataforma</p>
                 </div>
               </div>
             </motion.div>
@@ -242,7 +242,7 @@ const Journey = () => {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-20"
+              className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-20"
             >
               Tirar Ideia do Papel
             </motion.h2>
@@ -253,8 +253,10 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                  <div className="text-5xl mb-6">🚀</div>
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                  <div className='flex justify-center'>
+                    <Rocket className="w-16 h-16 mb-6 text-orange-600" />
+                  </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Da ideia a operação, do plano a execução, nós vamos com você!
                   </h3>
@@ -263,20 +265,21 @@ const Journey = () => {
                   </p>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-6 text-center">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Transforme sua ideia em realidade
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Do conceito inicial até a operação completa, oferecemos suporte integral para tirar sua ideia do papel e transformá-la em um negócio próspero.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>
@@ -290,8 +293,10 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                    <div className="text-5xl mb-6">🎯</div>
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                    <div className='flex justify-center'>
+                      <Target className="w-16 h-16 mb-6 text-red-700" />
+                    </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Do MVP ao Go-to-Market
                     </h3>
@@ -301,20 +306,21 @@ const Journey = () => {
                   </div>
                 </div>
                 
-                <div className="space-y-6 lg:col-start-1">
+                <div className="space-y-6 text-center lg:col-start-1">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Validação e Lançamento
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Desenvolvemos seu MVP, testamos no mercado e criamos estratégias eficazes de Go-to-Market para garantir o sucesso do seu lançamento.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>
@@ -341,8 +347,10 @@ const Journey = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
             >
-              <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                <div className="text-5xl mb-6">💰</div>
+              <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                <div className='flex justify-center'>
+                  <Landmark className="w-16 h-16 mb-6 text-blue-700" />
+                </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Venda, emita notas e controle o financeiro em nosso ERP
                 </h3>
@@ -351,20 +359,21 @@ const Journey = () => {
                 </p>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-6 text-center">
                 <h3 className="text-3xl font-bold text-gray-900">
                   Controle Total do seu Negócio
                 </h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Nossa plataforma ERP integrada permite que você gerencie vendas, emita notas fiscais e controle todo o financeiro em um só lugar, com relatórios em tempo real.
                 </p>
-                <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                  <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                   <a
                     href="https://wa.me/5511999999999"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                    className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                   >
                     Assinar JE
                   </a>
@@ -391,8 +400,10 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                  <div className="text-5xl mb-6">📚</div>
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                  <div className='flex justify-center'>
+                    <BookOpen className="w-16 h-16 mb-6 text-violet-600" />
+                  </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Educação, materiais e frameworks aplicáveis imediatamente
                   </h3>
@@ -401,20 +412,21 @@ const Journey = () => {
                   </p>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-6 text-center">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Conhecimento que Transforma
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Acesso a materiais educativos, frameworks testados e conhecimento prático que você pode aplicar imediatamente para acelerar o crescimento do seu negócio.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>
@@ -428,8 +440,10 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                    <div className="text-5xl mb-6">👥</div>
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                    <div className='flex justify-center'>
+                      <Users className="w-16 h-16 mb-6 text-blue-900" />
+                    </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Consultoria e Mentoria 1:1 e especializada
                     </h3>
@@ -439,20 +453,21 @@ const Journey = () => {
                   </div>
                 </div>
                 
-                <div className="space-y-6 lg:col-start-1">
+                <div className="space-y-6 text-center lg:col-start-1">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Mentoria Especializada
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Sessões individuais com especialistas em cada área do seu negócio, oferecendo orientação personalizada e estratégias específicas para seus desafios.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>
@@ -480,8 +495,10 @@ const Journey = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                  <div className="text-5xl mb-6">📈</div>
+                <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                  <div className='flex justify-center'>
+                    <LineChart className="w-16 h-16 mb-6 text-orange-600" />
+                  </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Preparar para investidores
                   </h3>
@@ -490,20 +507,21 @@ const Journey = () => {
                   </p>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-6 text-center">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Pronto para Investimento
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Organizamos toda documentação, criamos pitch decks profissionais e estruturamos contratos de vesting para apresentar seu negócio aos investidores com confiança.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>
@@ -517,8 +535,10 @@ const Journey = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:grid-flow-col-dense"
               >
                 <div className="lg:col-start-2">
-                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border">
-                    <div className="text-5xl mb-6">🤝</div>
+                  <div className="bg-card rounded-3xl p-8 shadow-2xl border border-border text-center">
+                    <div className='flex justify-center'>
+                      <Handshake className="w-16 h-16 mb-6 text-green-600" />
+                    </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       Negociações com o Mercado
                     </h3>
@@ -528,20 +548,21 @@ const Journey = () => {
                   </div>
                 </div>
                 
-                <div className="space-y-6 lg:col-start-1">
+                <div className="space-y-6 text-center lg:col-start-1">
                   <h3 className="text-3xl font-bold text-gray-900">
                     Negociações Estratégicas
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Suporte completo em rodadas de investimento, processos de M&A e estruturação de diluição, garantindo as melhores condições para seu negócio.
                   </p>
-                  <div className="bg-card rounded-3xl p-6 shadow-2xl border border-border">
-                    <p className="font-medium mb-4">Estou nesta etapa ou Encontrei o que preciso</p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <p className="font-medium">Estou nesta etapa ou Encontrei o que preciso</p>
                     <a
                       href="https://wa.me/5511999999999"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 inline-block shadow-md"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-md"
                     >
                       Assinar JE
                     </a>

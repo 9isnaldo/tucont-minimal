@@ -108,6 +108,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-center mt-16"
+              transition={{ delay: 0.1, duration: 1 }}
             >
               <div className="bg-gradient-to-r from-tucont-orange to-tucont-orange-light p-8 rounded-3xl text-white shadow-2xl max-w-2xl mx-auto">
                 <p className="text-lg mb-4 font-medium">
@@ -129,7 +130,6 @@ export default function About() {
         {/* FAQ */}
         <FAQ />
       </main>
-
       <Footer />
     </>
   );
