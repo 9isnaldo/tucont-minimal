@@ -84,10 +84,10 @@ const Plataforma = () => {
         {/* Modal para imagem expandida com navegação */}
         {isExpanded && (
           <div 
-            className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black bg-opacity-80 flex flex-col items-center justify-center p-4"
             onClick={toggleExpand}
           >
-            <div className="relative w-full max-w-6xl flex items-center">
+            <div className="relative w-full max-w-7xl flex items-center">
               {/* Botão de fechar */}
               <button 
                 className="absolute -top-12 -right-4 md:-right-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"

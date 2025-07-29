@@ -111,7 +111,7 @@ export default function About() {
               transition={{ delay: 0.1, duration: 1 }}
             >
               <div className="bg-gradient-to-r from-tucont-orange to-tucont-orange-light p-8 rounded-3xl text-white shadow-2xl max-w-2xl mx-auto">
-                <p className="text-lg mb-4 font-medium">
+                <p className="text-2xl font-semibold text-white mb-4">
                   Ah, pode ser por áudio, print, foto, envia aí que entendemos.
                 </p>
                 <a

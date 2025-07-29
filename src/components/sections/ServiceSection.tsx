@@ -159,7 +159,7 @@ const ServiceSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <PhoneMockup content={phoneContent} />
           <div className="flex flex-col justify-center h-[650px]">
-            <span className="text-3xl font-bold text-tucont-navy mb-20">Abertura de Empresa</span>
+            <span className="text-3xl font-bold text-tucont-orange mb-20">Abertura de Empresa</span>
             <div className="space-y-20">
               {serviceItems.map((item, index) => (
                 <div key={index}>
@@ -201,7 +201,7 @@ const ServiceSection = () => {
         {/* Seção 2 - Texto ESQUERDA, Celular DIREITA */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="flex flex-col justify-center h-[650px] lg:order-1">
-            <span className="text-3xl font-bold text-tucont-navy mb-20">Emissão de Notas Fiscais</span>
+            <span className="text-3xl font-bold text-tucont-orange mb-20">Emissão de Notas Fiscais</span>
             <div className="space-y-20">
               {NotaFiscal.map((item, index) => (
                 <div key={index}>
@@ -245,7 +245,7 @@ const ServiceSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <PhoneMockup content={phoneContent} />
           <div className="flex flex-col justify-center h-[650px]">
-            <span className="text-3xl font-bold text-tucont-navy mb-20">Tributos e Documentos</span>
+            <span className="text-3xl font-bold text-tucont-orange mb-20">Tributos e Documentos</span>
             <div className="space-y-20">
               {Tributos.map((item, index) => (
                 <div key={index}>
@@ -287,7 +287,7 @@ const ServiceSection = () => {
         {/* Seção 4 - Texto ESQUERDA, Celular DIREITA */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="flex flex-col justify-center h-[650px] lg:order-1">
-            <span className="text-3xl font-bold text-tucont-navy mb-20">Dados e Insights</span>
+            <span className="text-3xl font-bold text-tucont-orange mb-20">Dados e Insights</span>
             <div className="space-y-20">
               {Dados.map((item, index) => (
                 <div key={index}>
