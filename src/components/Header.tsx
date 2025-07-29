@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Calculator } from 'lucide-react';
+import Planos from '@/app/planos/page';
 
 const Header = () => {
   return (
@@ -47,7 +48,7 @@ const Header = () => {
 
         <div className="flex items-center gap-4">
           <Link 
-            href="/conhecer" 
+            href="/planos" 
             className="bg-tucont-navy text-white px-6 py-3 rounded-3xl hover:bg-tucont-orange transition-all duration-300 font-medium rounded-3xl hover:shadow-xl transform hover:scale-105"
             rel="noopener noreferrer"
           >
