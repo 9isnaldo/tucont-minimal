@@ -473,8 +473,16 @@ const Planos = () => {
                   onClick={() => window.open(`https://wa.me/5531975740510?text=${encodeURIComponent("Quero ajuda para escolher o melhor plano para minha empresa")}`, '_blank')}
                   className="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:scale-110 transition-all duration-300 shadow-lg inline-flex items-center gap-2"
                 >
-                  <Phone className="w-5 h-5" />
                   Falar com nossa equipe
+
+                          <img 
+          src="/image/logo-tucont.svg" 
+          alt="WhatsApp" 
+          className="h-8" 
+          width={32}
+          height={32}
+        />
+
                 </button>
               </div>
             </motion.div>
