@@ -59,7 +59,7 @@ const Journey = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-3xl md:text-5xl font-bold text-tucont-navy mb-20 leading-tight"
+                  className="text-3xl md:text-5xl font-black text-tucont-navy mb-20 leading-tight"
                 >
                   Copiloto da sua Jornada Empreendedora? Sim, nossa{' '}
                   <span className="text-orange-500">cereja do bolo!</span>

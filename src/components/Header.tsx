@@ -5,7 +5,7 @@ import Planos from '@/app/planos/page';
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
       <div className="mmx-auto px-6 py-4 flex justify-between items-center">
         <div className='flex items-center gap-8'>
           <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
