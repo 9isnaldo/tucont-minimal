@@ -5,14 +5,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, FileText, FileStack, LineChart } from "lucide-react";
 import InteractiveAi from '@/components/ui/interactive-ai';
 
-const headlines = [
+const headlines: string[] = [
   "Olá, sou a Tucont I.A., Contabilidade Integrativa!",  
   "Seu copiloto no Empreendedorismo e na Contabilidade Online.",
   "Sou para PF, PJ, Profissionais, Startups e Prestadores de Serviço.",
   "Crie ou Evolua sua empresa com nossa I.A. e automações, veja:",
 ];
 
-const cards = [
+interface Card {
+  title: string;
+  description: React.ReactNode;
+  icon: React.ReactNode;
+}
+
+const cards: Card[] = [
   { 
     title: "Criar e Abrir", 
     description: 
@@ -47,11 +53,23 @@ const cards = [
   }
 ];
 
-const headend = [
+const headend: string[] = [
   "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
 
-const TypewriterText = ({ text, onComplete, speed = 50, className = "" }) => {
+interface TypewriterTextProps {
+  text: string;
+  onComplete?: () => void;
+  speed?: number;
+  className?: string;
+}
+
+const TypewriterText: React.FC<TypewriterTextProps> = ({ 
+  text, 
+  onComplete, 
+  speed = 50, 
+  className = "" 
+}) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -89,7 +107,7 @@ const TypewriterText = ({ text, onComplete, speed = 50, className = "" }) => {
   );
 };
 
-const AnimatedHeadline = () => {
+const AnimatedHeadline: React.FC = () => {
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
   const [showCards, setShowCards] = useState(false);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
