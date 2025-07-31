@@ -23,7 +23,7 @@ export default function Banner({ className = "" }: BannerProps) {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-3xl md:text-4xl font-semibold text-tucont-navy mb-8 max-w-4xl"
         >
-          Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.
+          Autonomia e Liberdade pra você e por assinatura.
         </motion.h2>
       </div>
 

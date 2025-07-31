@@ -2,44 +2,60 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, FileText, FileStack, LineChart, Star, ArrowRight } from "lucide-react";
+import { Building2, FileText, FileStack, LineChart, ArrowRight } from "lucide-react";
+import InteractiveAi from '@/components/ui/interactive-ai';
 
 const headlines = [
-  "Olá, sou a Tucont, Contabilidade Integrativa!",  
-  "Pra você PF ou PJ, sou seu copiloto na Jornada empreendedora,",
-  "E óbvio, cumpro as obrigações com o Governo.",
-  "O atendimento é humanizado, automatizado e com I.A.",
-  "Para você que empreende ou vai empreender.",
-  "Diferente de tudo que você ja VIU!"
+  "Olá, sou a Tucont I.A., Contabilidade Integrativa!",  
+  "Seu copiloto no Empreendedorismo e na Contabilidade Online.",
+  "Sou para PF, PJ, Profissionais, Startups e Prestadores de Serviço.",
+  "Crie ou Evolua sua empresa com nossa I.A. e automações, veja:",
 ];
 
 const cards = [
   { 
-    title: "Abertura de Empresas", 
-    description: "Processo completo de abertura com acompanhamento personalizado desde o primeiro passo até a operação regular da sua empresa.",
+    title: "Criar e Abrir", 
+    description: 
+      <span>
+          • I.A. para ideias, planos e MVP.<br />
+          • Automação para criar o CNPJ.
+      </span>,
     icon: <Building2 size={80} className="text-tucont-yellow" /> 
   },
   { 
-    title: "Emissão de Notas Fiscais", 
-    description: "Sistema integrado para emissão, gestão e armazenamento seguro de todas as suas notas fiscais em um único lugar.",
+    title: "Vender e Emitir NF", 
+    description:
+      <span>
+          • Plataforma para você vender e emitir notas.<br />
+          • Ou peça pelo whatsapp que resolvemos.
+      </span>,
     icon: <FileText size={80} className="text-tucont-yellow" /> 
   },
   { 
-    title: "Gestão Tributária", 
+    title: "Obrigações com o GOV", 
     description: "Envio automático de tributos, notificação inteligente de vencimentos e acesso online centralizado a todos os seus documentos contábeis.", 
     icon: <FileStack size={80} className="text-tucont-yellow" /> 
   },
   { 
-    title: "Jornada Empreendedora", 
-    description: "Programa completo de educação financeira e empresarial com acompanhamento mensal do crescimento do seu negócio.", 
+    title: "Financeiro e Dados",
+    description:
+      <span>
+          • Plataforma para operações financeiras.<br />
+          • Todos os dados no whatsapp.
+      </span>,
     icon: <LineChart size={80} className="text-tucont-yellow" /> 
   }
+];
+
+const headend = [
+  "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
 
 const AnimatedHeadline = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCards, setShowCards] = useState(false);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
+  const [showHeadend, setShowHeadend] = useState(false);
 
   useEffect(() => {
     if (currentIndex < headlines.length) {
@@ -56,20 +72,31 @@ const AnimatedHeadline = () => {
 
   useEffect(() => {
     if (showCards) {
-      const finalTimer = setTimeout(() => {
+      const headendTimer = setTimeout(() => {
         setShowCards(false);
+        setShowHeadend(true);
+      }, 10000); // TEMPO DA ANIMAÇÃO - 10 SEGUNDOS
+      
+      return () => clearTimeout(headendTimer);
+    }
+  }, [showCards]);
+
+  useEffect(() => {
+    if (showHeadend) {
+      const finalTimer = setTimeout(() => {
+        setShowHeadend(false);
         setShowFinalMessage(true);
-      }, 10000); // TEMPO DA ANIMAÇÃO - 8 SEGUINGOS
+      }, 3500); // TEMPO DA ANIMAÇÃO - 3.5 SEGUNDOS
       
       return () => clearTimeout(finalTimer);
     }
-  }, [showCards]);
+  }, [showHeadend]);
 
   return (
     <div className="max-w-8xl mx-auto px-4">
       <div className="flex flex-col items-center justify-center w-full min-h-[70vh] py-12">
         <AnimatePresence mode="wait">
-          {currentIndex < headlines.length && !showCards && !showFinalMessage && (
+          {currentIndex < headlines.length && !showCards && !showHeadend && !showFinalMessage && (
             <motion.h1
               key={currentIndex}
               initial={{ opacity: 0, y: 20 }}
@@ -115,37 +142,44 @@ const AnimatedHeadline = () => {
         </AnimatePresence>
 
         <AnimatePresence>
+          {showHeadend && (
+            <motion.h2
+              key="headend"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center"
+            >
+              {headend[0]}
+            </motion.h2>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
           {showFinalMessage && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               className="w-full flex flex-col items-center space-y-12 py-12"
             >
-              <h2 className="text-4xl md:text-8xl font-black text-tucont-navy text-center px-4">
-                O jogo mudou, Contabilidade Ultrapassada, nunca mais!
+              <h2 className="text-4xl md:text-8xl flex font-black text-tucont-navy text-center px-2">
+                Crie empresas com a I.A. da
+                <span className="flex items-center justify-center px-6">
+                  <img src="/image/tucont-name-laranja.svg" alt="Tucont" className="h-16" />
+                </span>
               </h2>
-              
-              <div className="w-full max-w-4xl px-4">
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-16 flex items-center gap-4">
-                  <div className="flex-1 px-4 py-4">
-                    <input
-                      type="text"
-                      placeholder="Pergunta aí: Abrir empresa, emitir nota fiscal...."
-                      className="w-full text-gray-600 placeholder-gray-400 bg-transparent border-none outline-none text-xl"
-                      readOnly
-                    />
-                  </div>
-                  <a
-                    href="https://wa.me/5511999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-400 hover:bg-tucont-orange text-white rounded-full px-8 py-4 font-medium transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg text-lg"
-                  >
-                    <ArrowRight className="w-8 h-8" />
 
-                  </a>
-                </div>
-              </div>
+              <h3>
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8 "
+                  >
+                    Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados.
+                  </motion.h2>
+              </h3>
+              
+              <InteractiveAi />
             </motion.div>
           )}
         </AnimatePresence>
