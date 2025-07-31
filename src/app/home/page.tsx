@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, FileText, FileStack, LineChart } from "lucide-react";
 import InteractiveAi from '@/components/ui/interactive-ai';
 
-// Textos que serão exibidos com efeito de digitação
 const headlines: string[] = [
   "Olá, sou a Tucont I.A., Contabilidade Integrativa!",  
   "Seu copiloto no Empreendedorismo e na Contabilidade Online.",
@@ -19,7 +18,6 @@ interface Card {
   icon: React.ReactNode;
 }
 
-// Cards que aparecem sem efeito de digitação
 const cards: Card[] = [
   { 
     title: "Criar e Abrir", 
@@ -55,7 +53,6 @@ const cards: Card[] = [
   }
 ];
 
-// Mensagem final com efeito de digitação
 const headend: string[] = [
   "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
@@ -67,6 +64,7 @@ interface TypewriterTextProps {
   className?: string;
 }
 
+// Efeito máquina de escrever
 const TypewriterText: React.FC<TypewriterTextProps> = ({ 
   text, 
   onComplete, 
@@ -110,6 +108,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   );
 };
 
+// Seção de manchetes animadas (efeito digitação + transição entre textos)
 const HeadlinesSection = ({ onComplete }: { onComplete: () => void }) => {
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
   const [headlineCompleted, setHeadlineCompleted] = useState(false);
@@ -119,7 +118,7 @@ const HeadlinesSection = ({ onComplete }: { onComplete: () => void }) => {
       const timer = setTimeout(() => {
         setCurrentHeadlineIndex(currentHeadlineIndex + 1);
         setHeadlineCompleted(false);
-      }, 500);
+      }, 700);
       return () => clearTimeout(timer);
     } else if (headlineCompleted) {
       onComplete();
@@ -145,9 +144,10 @@ const HeadlinesSection = ({ onComplete }: { onComplete: () => void }) => {
   );
 };
 
+// Seção de cards com informações (aparece após as manchetes)
 const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
-    const timer = setTimeout(onComplete, 10000);
+    const timer = setTimeout(onComplete, 7000); // Mostra os cards por 7 segundos
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -183,7 +183,7 @@ const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
 
 const HeadendSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
-    const timer = setTimeout(onComplete, 3500);
+    const timer = setTimeout(onComplete, 3000); // Tempo da mensagem na tela 3 segundos
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -202,6 +202,7 @@ const HeadendSection = ({ onComplete }: { onComplete: () => void }) => {
   );
 };
 
+// Seção final com logo animada e I.A. interativa
 const FinalSection = () => {
   const [showLogo, setShowLogo] = useState(false);
   const fullText = "Crie empresas com a I.A. da Tucont";
@@ -215,11 +216,12 @@ const FinalSection = () => {
       animate={{ opacity: 1, y: 0 }}
       className="w-full flex flex-col items-center space-y-12 py-12"
     >
+      {/* Título principal com efeito de digitação e logo que aparece no meio */}
       <h2 className="text-4xl md:text-8xl font-black text-tucont-navy text-center px-2 flex flex-wrap justify-center items-center">
         <TypewriterText 
           text={beforeLogo} 
           onComplete={() => setShowLogo(true)}
-          speed={30}
+          speed={50}
           className="whitespace-pre"
         />
         {showLogo && (
@@ -235,30 +237,30 @@ const FinalSection = () => {
         {showLogo && (
           <TypewriterText 
             text={afterLogo} 
-            speed={30}
+            speed={10}
             className="whitespace-pre"
           />
         )}
       </h2>
 
-      <h3>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8"
-        >
-          <TypewriterText 
-            text="Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados." 
-            speed={30}
-          />
-        </motion.h2>
-      </h3>
+      {/* Subtítulo */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8"
+      >
+        <TypewriterText 
+          text="Desenvolva conversando com I.A. e evolua com serviços automatizados." 
+          speed={50}
+        />
+      </motion.div>
       
       <InteractiveAi />
     </motion.div>
   );
 };
 
+// Componente principal que controla o fluxo das animações
 const AnimatedHeadline = () => {
   const [currentStage, setCurrentStage] = useState<
     'headlines' | 'cards' | 'headend' | 'final'

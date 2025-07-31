@@ -43,7 +43,6 @@ export default function About() {
       <main>
         {/* Hero Section */}
         <Banner />
-
         {/* Services Section */}
         <ServiceSection />
 
