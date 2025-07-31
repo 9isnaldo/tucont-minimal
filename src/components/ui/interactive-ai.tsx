@@ -30,13 +30,13 @@ const InteractiveAi = () => {
           disabled={!inputValue.trim()}
           className={`
             bg-orange-400 hover:bg-tucont-orange 
-            text-white rounded-full md:px-8 md:py-4 
+            text-white rounded-full md:px-4 md:py-4 
             font-medium transition-all duration-300 
             flex items-center gap-3 shadow-md hover:shadow-lg 
             text-lg disabled:opacity-50 disabled:cursor-not-allowed
           `}
         >
-          <Bot className="w-6 h-6 md:w-8 md:h-8 items-center justify-center" />
+          <Bot className="w-6 h-6 md:w-10 md:h-10 items-center justify-center" />
         </button>
       </div>
     </div>

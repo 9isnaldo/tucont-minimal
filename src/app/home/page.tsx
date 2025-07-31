@@ -51,24 +51,64 @@ const headend = [
   "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
 
-const AnimatedHeadline = () => {
+const TypewriterText = ({ text, onComplete }) => {
+  const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 50); // Velocidade da digitação (50ms por caractere)
+
+      return () => clearTimeout(timeout);
+    } else if (onComplete) {
+      // Adiciona um pequeno atraso após terminar de digitar
+      const timeout = setTimeout(onComplete, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, onComplete]);
+
+  return (
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="inline-block"
+    >
+      {displayedText}
+      <motion.span
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ repeat: Infinity, duration: 0.8 }}
+        className="ml-1"
+      >
+        |
+      </motion.span>
+    </motion.span>
+  );
+};
+
+const AnimatedHeadline = () => {
+  const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
   const [showCards, setShowCards] = useState(false);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [showHeadend, setShowHeadend] = useState(false);
+  const [headlineCompleted, setHeadlineCompleted] = useState(false);
 
   useEffect(() => {
-    if (currentIndex < headlines.length) {
+    if (headlineCompleted && currentHeadlineIndex < headlines.length - 1) {
       const timer = setTimeout(() => {
-        if (currentIndex < headlines.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else {
-          setShowCards(true);
-        }
-      }, 3500); //TEMPO DA ANIMAÇÃO - 3 SEGUINGOS
+        setCurrentHeadlineIndex(currentHeadlineIndex + 1);
+        setHeadlineCompleted(false);
+      }, 500); // Tempo entre as frases
+      return () => clearTimeout(timer);
+    } else if (headlineCompleted && currentHeadlineIndex === headlines.length - 1) {
+      const timer = setTimeout(() => {
+        setShowCards(true);
+      }, 1000); // Tempo antes de mostrar os cards
       return () => clearTimeout(timer);
     }
-  }, [currentIndex]);
+  }, [headlineCompleted, currentHeadlineIndex]);
 
   useEffect(() => {
     if (showCards) {
@@ -96,15 +136,18 @@ const AnimatedHeadline = () => {
     <div className="max-w-8xl mx-auto px-4">
       <div className="flex flex-col items-center justify-center w-full min-h-[70vh] py-12">
         <AnimatePresence mode="wait">
-          {currentIndex < headlines.length && !showCards && !showHeadend && !showFinalMessage && (
+          {currentHeadlineIndex < headlines.length && !showCards && !showHeadend && !showFinalMessage && (
             <motion.h1
-              key={currentIndex}
+              key={currentHeadlineIndex}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center "
+              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
             >
-              {headlines[currentIndex]}
+              <TypewriterText 
+                text={headlines[currentHeadlineIndex]} 
+                onComplete={() => setHeadlineCompleted(true)}
+              />
             </motion.h1>
           )}
         </AnimatePresence>
@@ -148,9 +191,9 @@ const AnimatedHeadline = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center"
+              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
             >
-              {headend[0]}
+              <TypewriterText text={headend[0]} />
             </motion.h2>
           )}
         </AnimatePresence>
