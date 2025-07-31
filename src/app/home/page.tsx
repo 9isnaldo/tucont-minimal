@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, FileText, FileStack, LineChart, ArrowRight } from "lucide-react";
+import { Building2, FileText, FileStack, LineChart } from "lucide-react";
 import InteractiveAi from '@/components/ui/interactive-ai';
 
 const headlines = [
@@ -51,7 +51,7 @@ const headend = [
   "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
 
-const TypewriterText = ({ text, onComplete }) => {
+const TypewriterText = ({ text, onComplete, speed = 50, className = "" }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -60,30 +60,31 @@ const TypewriterText = ({ text, onComplete }) => {
       const timeout = setTimeout(() => {
         setDisplayedText(prev => prev + text[currentIndex]);
         setCurrentIndex(prev => prev + 1);
-      }, 50); // Velocidade da digitação (50ms por caractere)
+      }, speed);
 
       return () => clearTimeout(timeout);
     } else if (onComplete) {
-      // Adiciona um pequeno atraso após terminar de digitar
-      const timeout = setTimeout(onComplete, 1000);
+      const timeout = setTimeout(onComplete, 500);
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, text, onComplete]);
+  }, [currentIndex, text, onComplete, speed]);
 
   return (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="inline-block"
+      className={`inline-block ${className}`}
     >
       {displayedText}
-      <motion.span
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-        className="ml-1"
-      >
-        |
-      </motion.span>
+      {currentIndex < text.length && (
+        <motion.span
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ repeat: Infinity, duration: 0.8 }}
+          className="ml-1"
+        >
+          |
+        </motion.span>
+      )}
     </motion.span>
   );
 };
@@ -94,18 +95,19 @@ const AnimatedHeadline = () => {
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [showHeadend, setShowHeadend] = useState(false);
   const [headlineCompleted, setHeadlineCompleted] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
     if (headlineCompleted && currentHeadlineIndex < headlines.length - 1) {
       const timer = setTimeout(() => {
         setCurrentHeadlineIndex(currentHeadlineIndex + 1);
         setHeadlineCompleted(false);
-      }, 500); // Tempo entre as frases
+      }, 500);
       return () => clearTimeout(timer);
     } else if (headlineCompleted && currentHeadlineIndex === headlines.length - 1) {
       const timer = setTimeout(() => {
         setShowCards(true);
-      }, 1000); // Tempo antes de mostrar os cards
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [headlineCompleted, currentHeadlineIndex]);
@@ -115,8 +117,7 @@ const AnimatedHeadline = () => {
       const headendTimer = setTimeout(() => {
         setShowCards(false);
         setShowHeadend(true);
-      }, 10000); // TEMPO DA ANIMAÇÃO - 10 SEGUNDOS
-      
+      }, 10000);
       return () => clearTimeout(headendTimer);
     }
   }, [showCards]);
@@ -126,11 +127,45 @@ const AnimatedHeadline = () => {
       const finalTimer = setTimeout(() => {
         setShowHeadend(false);
         setShowFinalMessage(true);
-      }, 3500); // TEMPO DA ANIMAÇÃO - 3.5 SEGUNDOS
-      
+      }, 3500);
       return () => clearTimeout(finalTimer);
     }
   }, [showHeadend]);
+
+  const renderFinalMessage = () => {
+    const fullText = "Crie empresas com a I.A. da Tucont";
+    const logoPosition = fullText.indexOf("Tucont");
+    const beforeLogo = fullText.substring(0, logoPosition);
+    const afterLogo = fullText.substring(logoPosition + "Tucont".length);
+
+    return (
+      <h2 className="text-4xl md:text-8xl font-black text-tucont-navy text-center px-2 flex flex-wrap justify-center items-center">
+        <TypewriterText 
+          text={beforeLogo} 
+          onComplete={() => setShowLogo(true)}
+          speed={30}
+          className="whitespace-pre"
+        />
+        {showLogo && (
+          <motion.span
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center justify-center px-2"
+          >
+            <img src="/image/tucont-name-laranja.svg" alt="Tucont" className="h-16" />
+          </motion.span>
+        )}
+        {showLogo && (
+          <TypewriterText 
+            text={afterLogo} 
+            speed={30}
+            className="whitespace-pre"
+          />
+        )}
+      </h2>
+    );
+  };
 
   return (
     <div className="max-w-8xl mx-auto px-4">
@@ -193,7 +228,7 @@ const AnimatedHeadline = () => {
               exit={{ opacity: 0, y: -20 }}
               className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
             >
-              <TypewriterText text={headend[0]} />
+              <TypewriterText text={headend[0]} speed={40} />
             </motion.h2>
           )}
         </AnimatePresence>
@@ -205,21 +240,19 @@ const AnimatedHeadline = () => {
               animate={{ opacity: 1, y: 0 }}
               className="w-full flex flex-col items-center space-y-12 py-12"
             >
-              <h2 className="text-4xl md:text-8xl flex font-black text-tucont-navy text-center px-2">
-                Crie empresas com a I.A. da
-                <span className="flex items-center justify-center px-6">
-                  <img src="/image/tucont-name-laranja.svg" alt="Tucont" className="h-16" />
-                </span>
-              </h2>
+              {renderFinalMessage()}
 
               <h3>
                 <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8 "
-                  >
-                    Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados.
-                  </motion.h2>
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8"
+                >
+                  <TypewriterText 
+                    text="Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados." 
+                    speed={30}
+                  />
+                </motion.h2>
               </h3>
               
               <InteractiveAi />
