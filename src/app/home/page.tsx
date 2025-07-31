@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, FileText, FileStack, LineChart } from "lucide-react";
 import InteractiveAi from '@/components/ui/interactive-ai';
 
+// Textos que serão exibidos com efeito de digitação
 const headlines: string[] = [
   "Olá, sou a Tucont I.A., Contabilidade Integrativa!",  
   "Seu copiloto no Empreendedorismo e na Contabilidade Online.",
@@ -18,6 +19,7 @@ interface Card {
   icon: React.ReactNode;
 }
 
+// Cards que aparecem sem efeito de digitação
 const cards: Card[] = [
   { 
     title: "Criar e Abrir", 
@@ -53,6 +55,7 @@ const cards: Card[] = [
   }
 ];
 
+// Mensagem final com efeito de digitação
 const headend: string[] = [
   "O jogo mudou, Contabilidade Ultrapassada, nunca mais!",
 ];
@@ -67,7 +70,7 @@ interface TypewriterTextProps {
 const TypewriterText: React.FC<TypewriterTextProps> = ({ 
   text, 
   onComplete, 
-  speed = 50, 
+  speed = 50,
   className = "" 
 }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -107,13 +110,9 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   );
 };
 
-const AnimatedHeadline: React.FC = () => {
+const HeadlinesSection = ({ onComplete }: { onComplete: () => void }) => {
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
-  const [showCards, setShowCards] = useState(false);
-  const [showFinalMessage, setShowFinalMessage] = useState(false);
-  const [showHeadend, setShowHeadend] = useState(false);
   const [headlineCompleted, setHeadlineCompleted] = useState(false);
-  const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
     if (headlineCompleted && currentHeadlineIndex < headlines.length - 1) {
@@ -122,41 +121,100 @@ const AnimatedHeadline: React.FC = () => {
         setHeadlineCompleted(false);
       }, 500);
       return () => clearTimeout(timer);
-    } else if (headlineCompleted && currentHeadlineIndex === headlines.length - 1) {
-      const timer = setTimeout(() => {
-        setShowCards(true);
-      }, 1000);
-      return () => clearTimeout(timer);
+    } else if (headlineCompleted) {
+      onComplete();
     }
-  }, [headlineCompleted, currentHeadlineIndex]);
+  }, [headlineCompleted, currentHeadlineIndex, onComplete]);
 
+  return (
+    <AnimatePresence mode="wait">
+      <motion.h1
+        key={currentHeadlineIndex}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
+      >
+        <TypewriterText 
+          text={headlines[currentHeadlineIndex]} 
+          onComplete={() => setHeadlineCompleted(true)}
+          speed={50}
+        />
+      </motion.h1>
+    </AnimatePresence>
+  );
+};
+
+const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
-    if (showCards) {
-      const headendTimer = setTimeout(() => {
-        setShowCards(false);
-        setShowHeadend(true);
-      }, 10000);
-      return () => clearTimeout(headendTimer);
-    }
-  }, [showCards]);
+    const timer = setTimeout(onComplete, 10000);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
 
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 px-2"
+    >
+      {cards.map((card, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.2 }}
+          className="bg-tucont-navy text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
+        >
+          <div className="mb-8 flex justify-center">
+            {card.icon}
+          </div>
+          <h3 className="font-bold text-3xl mb-6 text-center">
+            {card.title}
+          </h3>
+          <p className="text-gray-300 text-xl text-center flex-grow leading-relaxed">
+            {card.description}
+          </p>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
+
+const HeadendSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
-    if (showHeadend) {
-      const finalTimer = setTimeout(() => {
-        setShowHeadend(false);
-        setShowFinalMessage(true);
-      }, 3500);
-      return () => clearTimeout(finalTimer);
-    }
-  }, [showHeadend]);
+    const timer = setTimeout(onComplete, 3500);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
 
-  const renderFinalMessage = () => {
-    const fullText = "Crie empresas com a I.A. da Tucont";
-    const logoPosition = fullText.indexOf("Tucont");
-    const beforeLogo = fullText.substring(0, logoPosition);
-    const afterLogo = fullText.substring(logoPosition + "Tucont".length);
+  return (
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
+    >
+      <TypewriterText 
+        text={headend[0]} 
+        speed={40}
+      />
+    </motion.h2>
+  );
+};
 
-    return (
+const FinalSection = () => {
+  const [showLogo, setShowLogo] = useState(false);
+  const fullText = "Crie empresas com a I.A. da Tucont";
+  const logoPosition = fullText.indexOf("Tucont");
+  const beforeLogo = fullText.substring(0, logoPosition);
+  const afterLogo = fullText.substring(logoPosition + "Tucont".length);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="w-full flex flex-col items-center space-y-12 py-12"
+    >
       <h2 className="text-4xl md:text-8xl font-black text-tucont-navy text-center px-2 flex flex-wrap justify-center items-center">
         <TypewriterText 
           text={beforeLogo} 
@@ -182,101 +240,46 @@ const AnimatedHeadline: React.FC = () => {
           />
         )}
       </h2>
-    );
-  };
+
+      <h3>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8"
+        >
+          <TypewriterText 
+            text="Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados." 
+            speed={30}
+          />
+        </motion.h2>
+      </h3>
+      
+      <InteractiveAi />
+    </motion.div>
+  );
+};
+
+const AnimatedHeadline = () => {
+  const [currentStage, setCurrentStage] = useState<
+    'headlines' | 'cards' | 'headend' | 'final'
+  >('headlines');
 
   return (
     <div className="max-w-8xl mx-auto px-4">
       <div className="flex flex-col items-center justify-center w-full min-h-[70vh] py-12">
-        <AnimatePresence mode="wait">
-          {currentHeadlineIndex < headlines.length && !showCards && !showHeadend && !showFinalMessage && (
-            <motion.h1
-              key={currentHeadlineIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
-            >
-              <TypewriterText 
-                text={headlines[currentHeadlineIndex]} 
-                onComplete={() => setHeadlineCompleted(true)}
-              />
-            </motion.h1>
-          )}
-        </AnimatePresence>
+        {currentStage === 'headlines' && (
+          <HeadlinesSection onComplete={() => setCurrentStage('cards')} />
+        )}
 
-        <AnimatePresence>
-          {showCards && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 px-2"
-            >
-              {cards.map((card, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-tucont-navy text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
-                >
-                  <div className="mb-8 flex justify-center">
-                    {card.icon}
-                  </div>
-                  <h3 className="font-bold text-3xl mb-6 text-center">
-                    {card.title}
-                  </h3>
-                  <p className="text-gray-300 text-xl text-center flex-grow leading-relaxed">
-                    {card.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {currentStage === 'cards' && (
+          <CardsSection onComplete={() => setCurrentStage('headend')} />
+        )}
 
-        <AnimatePresence>
-          {showHeadend && (
-            <motion.h2
-              key="headend"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="text-4xl md:text-8xl font-bold text-tucont-navy text-center min-h-[200px] md:min-h-[300px] flex items-center"
-            >
-              <TypewriterText text={headend[0]} speed={40} />
-            </motion.h2>
-          )}
-        </AnimatePresence>
+        {currentStage === 'headend' && (
+          <HeadendSection onComplete={() => setCurrentStage('final')} />
+        )}
 
-        <AnimatePresence>
-          {showFinalMessage && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="w-full flex flex-col items-center space-y-12 py-12"
-            >
-              {renderFinalMessage()}
-
-              <h3>
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  className="text-3xl md:text-4xl font-semibold text-center text-gray-600 mb-8"
-                >
-                  <TypewriterText 
-                    text="Desenvolva sua empresa, conversando com I.A. e evolua com serviços automatizados." 
-                    speed={30}
-                  />
-                </motion.h2>
-              </h3>
-              
-              <InteractiveAi />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {currentStage === 'final' && <FinalSection />}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const InteractiveAi = () => {
 
   return (
     <div className="w-full max-w-4xl px-4">
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 md:p-16 flex items-center gap-4">
+      <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 md:p-5 md:py-16 flex items-center gap-4">
         <div className="flex-1 px-4 py-4">
           <input
             type="text"
@@ -30,7 +30,7 @@ const InteractiveAi = () => {
           disabled={!inputValue.trim()}
           className={`
             bg-orange-400 hover:bg-tucont-orange 
-            text-white rounded-full md:px-4 md:py-4 
+            text-white rounded-full md:px-5 md:py-5 
             font-medium transition-all duration-300 
             flex items-center gap-3 shadow-md hover:shadow-lg 
             text-lg disabled:opacity-50 disabled:cursor-not-allowed
