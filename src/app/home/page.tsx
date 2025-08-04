@@ -144,27 +144,35 @@ const HeadlinesSection = ({ onComplete }: { onComplete: () => void }) => {
   );
 };
 
-// Seção de cards com informações (aparece após as manchetes)
+// Seção de cards com informações (aparece após as manchetes) - MODIFICADA
 const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
+  const [visibleCards, setVisibleCards] = useState<number>(0);
+
   useEffect(() => {
-    const timer = setTimeout(onComplete, 7000); // Mostra os cards por 7 segundos
-    return () => clearTimeout(timer);
+    // Mostra os cards um por um
+    const cardTimers = cards.map((_, index) => {
+      return setTimeout(() => {
+        setVisibleCards(prev => prev + 1);
+      }, index * 300); // 300ms entre cada card
+    });
+
+    // Tempo total da animação + 3 segundos para visualização
+    const finalTimer = setTimeout(onComplete, cards.length * 300 + 3000);
+    
+    return () => {
+      cardTimers.forEach(timer => clearTimeout(timer));
+      clearTimeout(finalTimer);
+    };
   }, [onComplete]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 px-2"
-    >
+    <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 mt-8 px-2">
       {cards.map((card, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.2 }}
-          className="bg-tucont-navy text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full"
+          className={`bg-tucont-navy text-white p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col h-full min-h-[450px] w-full
+            ${index < visibleCards ? 'animate-jump-in animate-once' : 'opacity-0'}`}
+          style={{ animationDelay: `${index * 0.1}s` }}
         >
           <div className="mb-8 flex justify-center">
             {card.icon}
@@ -175,11 +183,13 @@ const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
           <p className="text-gray-300 text-xl text-center flex-grow leading-relaxed">
             {card.description}
           </p>
-        </motion.div>
+        </div>
       ))}
-    </motion.div>
+    </div>
   );
 };
+
+// ... (todo o restante do código permanece EXATAMENTE igual, desde HeadendSection até o final)
 
 const HeadendSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
