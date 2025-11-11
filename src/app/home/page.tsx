@@ -153,11 +153,11 @@ const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
     const cardTimers = cards.map((_, index) => {
       return setTimeout(() => {
         setVisibleCards(prev => prev + 1);
-      }, index * 300); // 300ms entre cada card
+      }, index * 800); // 300ms entre cada card
     });
 
     // Tempo total da animação + 3 segundos para visualização
-    const finalTimer = setTimeout(onComplete, cards.length * 300 + 3000);
+    const finalTimer = setTimeout(onComplete, cards.length * 1000 + 8000);
     
     return () => {
       cardTimers.forEach(timer => clearTimeout(timer));
@@ -193,7 +193,7 @@ const CardsSection = ({ onComplete }: { onComplete: () => void }) => {
 
 const HeadendSection = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
-    const timer = setTimeout(onComplete, 3000); // Tempo da mensagem na tela 3 segundos
+    const timer = setTimeout(onComplete, 12000); // Tempo da mensagem na tela 3 segundos
     return () => clearTimeout(timer);
   }, [onComplete]);
 

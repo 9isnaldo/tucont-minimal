@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import ServiceSection from '@/components/sections/ServiceSection';
 import Banner from '@/components/sections/Banner';
 import { Rocket, MessageSquare, CheckCircle } from 'lucide-react';
+import { Sobre } from '@/components/sections/Sobre';
 
 export default function About() {
   const onboardingItems = [
@@ -46,29 +47,7 @@ export default function About() {
         {/* Services Section */}
         <ServiceSection />
 
-        {/* About Section */}
-        <section className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-card rounded-3xl p-8 shadow-2xl border border-border"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold text-tucont-navy text-center mb-10">
-                Quem Somos
-              </h2>
-              
-              <div className="space-y-6 text-xl text-center text-gray-600 leading-relaxed">
-                <p>
-                  Somos a transformação da contabilidade, utilizamos uma esteira tecnológica para cumprir as obrigações com o governo.
-                </p>
-                <p>
-                  Utilizamos o whatsapp, é só nos chamar que resolvemos o que precisar. Simples, rápido e com a ferramenta que está na palma da sua mão.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <Sobre />
 
         {/* Onboarding Section */}
         <section className="py-32 px-6 min-h-screen flex items-center justify-center">

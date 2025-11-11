@@ -24,8 +24,8 @@ export const Sobre = () => {
             <Sparkles className="w-5 h-5" />
             <span className="font-medium">Empreendedorismo Integrativo</span>
           </div>
-          <h2 className="text-[#1a365d] text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Por que escolhem a <span className="text-[#ff8c00]">Tucont</span>?
+          <h2 className="text-tucont-navy text-5xl md:text-6xl font-bold mb-8 leading-tight">
+            Por que escolhem a <span className="text-tucont-orange">Tucont</span>?
           </h2>
           <p className="text-2xl text-[#6b7280] font-semibold">
             Porque transformamos a contabilidade em uma <span className="text-[#1e90ff]">experiência humana</span> e tecnológica.
@@ -36,12 +36,12 @@ export const Sobre = () => {
         <div className="mb-20 bg-gradient-to-r from-[#ebf4ff] to-[#fff4ed] p-8 rounded-2xl border border-gray-100 shadow-2xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-5">
-              <h3 className="text-3xl font-bold text-gray-900 mb-5">
-                Nosso <span className="text-[#1e90ff]">Sonho Grande</span>
+              <h3 className="text-3xl font-bold text-tucont-navy mb-5">
+                Nosso <span className="text-tucont-orange">Sonho Grande</span>
               </h3>
               <div className="text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  Contribuir para o Brasil chegar a <span className="text-[#1e90ff] font-semibold">50 milhões de PJs</span> e
+                  Contribuir para o Brasil chegar a 50 milhões de PJs e
                   mudar a sociedade pelo despertar do empreendedorismo.
                 </p>
                 <p className="text-[#ff8c00] font-medium">
@@ -57,7 +57,7 @@ export const Sobre = () => {
                 </div>
                 <div className="flex items-center justify-center gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-800 mb-1">21MM</div>
+                    <div className="text-3xl font-bold text-tucont-navy mb-1">21MM</div>
                     <div className="text-gray-500 text-sm">Atual</div>
                   </div>
                   <div className="flex-1 relative">
@@ -90,9 +90,6 @@ export const Sobre = () => {
                   <div className="text-white font-medium">Geraldo Oliveira</div>
                   <div className="text-[#ffb74d] text-sm">Fundador & CEO</div>
                 </div>
-              </div>
-              <div className="absolute -bottom-3 -right-3 bg-white px-3 py-1 rounded-full shadow-md border border-gray-200 text-sm font-medium">
-                +30 negócios
               </div>
             </div>
           </div>
@@ -131,15 +128,16 @@ export const Sobre = () => {
         <div className="mb-16 bg-gradient-to-br from-[#ebf4ff] to-[#fff4ed] p-8 rounded-2xl border border-gray-100 shadow-2xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-5">
-              <h3 className="text-3xl font-bold text-gray-900 mb-5">
-                Abordagem <span className="text-[#1e90ff]">Integrativa</span>
+              <h3 className="text-3xl font-bold text-tucont-navy mb-5">
+                Quem Somos
               </h3>
               <div className="text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  Enquanto a contabilidade tradicional é reativa, nós somos <span className="text-[#1e90ff] font-semibold">proativos</span>.
+                  Somos a transformação da contabilidade, utilizamos uma esteira tecnológica 
+                  para cumprir as obrigações com o governo.
                 </p>
                 <p>
-                  Combinamos <span className="text-[#ff8c00] font-medium">tecnologia</span>, <span className="text-[#ff8c00] font-medium">pessoas</span> e <span className="text-[#ff8c00] font-medium">educação</span> para criar uma experiência completa para seu negócio.
+                  Utilizamos o whatsapp, é só nos chamar que resolvemos o que precisar. Simples, rápido e com a ferramenta que está na palma da sua mão.
                 </p>
               </div>
             </div>
@@ -173,8 +171,8 @@ export const Sobre = () => {
         <div className="text-center mt-12">
           <div className="bg-gradient-to-r from-[#1e90ff] to-[#ff8c00] p-0.5 rounded-2xl shadow-2xl inline-block">
             <div className="bg-white p-8 rounded-2xl">
-              <h3 className="text-3xl font-bold text-gray-900 mb-5">
-                Pronto para <span className="text-[#ff8c00]">transformar</span> seu negócio?
+              <h3 className="text-3xl font-bold text-gray-600 mb-5">
+                Pronto para <span className="text-tucont-orange">transformar</span> seu negócio?
               </h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                 Junte-se a milhares de empreendedores que já descobriram uma nova forma de fazer contabilidade.

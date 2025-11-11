@@ -198,7 +198,7 @@ const ServiceSection = () => {
           </div>
         </div>
 
-        {/* Seção 2 - Texto ESQUERDA, Celular DIREITA */}
+        {/* Texto ESQUERDA, Celular DIREITA */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="flex flex-col justify-center h-[650px] lg:order-1">
             <span className="text-3xl font-bold text-tucont-orange mb-20">Emissão de Notas Fiscais</span>
